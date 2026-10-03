@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Avenue 67</title>
+<meta name="description" content="Property sourcing for buyers of fine homes in London, Oxford and Cambridge.">
+<meta property="og:title" content="Avenue 67">
+<meta property="og:description" content="Property sourcing for buyers of fine homes in London, Oxford and Cambridge.">
+<meta property="og:image" content="img/barbican.jpg">
+<meta name="theme-color" content="#0a1324">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400&display=swap">
+<style>
+/* One long photographic page after the reference: hero photo behind the title, services and rows; then a closing screen with the headline set over a second photo. */
+:root {
+  --ink: #0a1324;
+  --ivory: #f2efe8;
+  --mist: rgba(242,239,232,0.78);
+  --line: rgba(242,239,232,0.2);
+  --champagne: #d8c49c;
+  --sans: "Helvetica Neue", "Inter Tight", Helvetica, Arial, sans-serif;
+  --g: clamp(16px, 3vw, 44px);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--ink); color: var(--ivory); font: 400 11px/1.35 var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+p { margin: 0; }
+.tiny { font-size: 11px; line-height: 1.35; font-weight: 400; }
+:focus-visible { outline: 1px solid var(--ivory); outline-offset: 4px; }
+
+/* Photo zone */
+.zone { position: relative; isolation: isolate; padding: 0 var(--g); }
+.zone__bg { position: absolute; inset: 0; z-index: -1; background: var(--ink) url("img/barbican.jpg") center top / cover no-repeat; will-change: transform; }
+.zone__bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,19,36,.15) 0%, rgba(10,19,36,0) 30%, rgba(10,19,36,.25) 58%, var(--ink) 92%); }
+
+.top { display: flex; justify-content: space-between; align-items: flex-start; padding-top: 16px; }
+.top nav { display: grid; justify-items: end; gap: 3px; }
+.dots { position: absolute; right: var(--g); top: 28vh; display: grid; gap: 7px; }
+.dots i { display: block; width: 3px; height: 3px; border-radius: 50%; background: var(--mist); }
+.dots i:first-child { background: var(--ivory); }
+
+.title { margin: 2vw 0 0 9%; font: 300 clamp(64px, 14.6vw, 230px)/.86 var(--sans); letter-spacing: -0.055em; white-space: nowrap; }
+.intro { display: grid; gap: 14px; width: 128px; margin: 4vw 0 0 47%; }
+.intro .cta { display: grid; gap: 10px; justify-items: start; }
+.key { width: 46px; height: 46px; border-radius: 50%; background: var(--ivory); color: var(--ink); display: grid; place-items: center; transition: background-color .4s, transform .5s cubic-bezier(.2,.7,.2,1); }
+a:hover .key, button.key:hover { background: var(--champagne); transform: translateY(2px); }
+
+.offer { display: grid; grid-template-columns: 9% 1fr; margin-top: 15vw; }
+.offer p.big { font: 300 clamp(22px, 2.75vw, 42px)/1.12 var(--sans); letter-spacing: -0.02em; max-width: 46ch; text-shadow: 0 1px 18px rgba(10,19,36,.6); }
+.fig p, .intro p, .row .d { text-shadow: 0 1px 10px rgba(10,19,36,.9); }
+
+.figures { display: grid; grid-template-columns: 9% repeat(3, 1fr); margin-top: 9vw; padding-bottom: 4vw; }
+.fig b { display: block; font: 300 clamp(64px, 8.4vw, 132px)/.9 var(--sans); letter-spacing: -0.05em; }
+.fig b sup { font-size: 11px; letter-spacing: 0; vertical-align: baseline; margin-left: 4px; color: var(--champagne); font-weight: 400; }
+.fig p { margin-top: 10px; color: var(--mist); }
+
+.rows { margin-top: 4vw; }
+.row { display: grid; grid-template-columns: 9% 1fr 26%; min-height: 9.5vw; padding: 12px 0 18px; border-top: 1px solid var(--line); }
+.row:last-child { border-bottom: 1px solid var(--line); }
+.row .n { color: var(--mist); }
+.row h2 { grid-column: 2; align-self: end; margin: 0; font: 300 clamp(22px, 2.2vw, 34px)/1 var(--sans); letter-spacing: -0.02em; color: rgba(242,239,232,.8); transition: color .4s; }
+.row:hover h2 { color: var(--ivory); }
+.row .d { grid-column: 3; grid-row: 1; display: grid; gap: 8px; align-content: start; color: var(--mist); max-width: 150px; }
+
+/* Close */
+.close { position: relative; isolation: isolate; min-height: 100svh; padding: 18vh var(--g) 0; display: flex; flex-direction: column; overflow: hidden; }
+.bgimg { position: absolute; inset: 0 0 0 28%; z-index: -1; background: url("img/balconies.jpg") 70% 40% / cover no-repeat; }
+.bgimg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, var(--ink) 0%, rgba(10,19,36,0) 35%), linear-gradient(180deg, var(--ink) 0%, var(--ink) 6%, rgba(10,19,36,.82) 18%, rgba(10,19,36,.45) 32%, rgba(10,19,36,.12) 46%, rgba(10,19,36,0) 56%), linear-gradient(90deg, var(--ink) 0%, rgba(10,19,36,.85) 16%, rgba(10,19,36,.35) 32%, rgba(10,19,36,0) 50%); }
+.close .head { margin-left: 9%; --h: clamp(64px, 11vw, 200px); }
+.close h2 { margin: 0; font: 300 var(--h)/.88 var(--sans); letter-spacing: -0.045em; }
+.close h2 span { display: block; }
+.close h2 .r { padding-left: 1.4em; }
+.close .note { margin: 3.2vw 0 0 calc(var(--h) * 1.4); max-width: 220px; font-size: 12px; line-height: 1.5; color: rgba(242,239,232,.72); }
+.close .form { margin-top: auto; }
+
+.trio-x > div::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,19,36,.7) 0%, rgba(10,19,36,0) 35%); }
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; margin: -2.6vw 0 0 9%; }
+.trio > div { position: relative; aspect-ratio: 3 / 4; background: center / cover no-repeat; }
+
+
+.form { display: grid; grid-template-columns: 9% 1fr 1fr auto; gap: 0 3vw; align-items: end; padding: 3.2vw 0 2vw; }
+.form .f { display: grid; gap: 6px; }
+.form label { color: var(--mist); text-transform: uppercase; letter-spacing: .08em; }
+.form input { width: 100%; background: transparent; border: 0; border-bottom: 1px solid rgba(242,239,232,.28); border-radius: 0; color: var(--ivory); font: 300 clamp(18px, 1.6vw, 24px)/1.2 var(--sans); padding: 6px 0 10px; }
+.form input:focus { outline: none; border-bottom-color: var(--ivory); }
+.form .f[data-bad] input { border-bottom-color: var(--champagne); }
+.form .msg { min-height: 15px; color: var(--champagne); }
+.form button.key { border: 0; cursor: pointer; margin-bottom: 20px; }
+.form button.key[disabled] { opacity: .5; cursor: progress; }
+.status { grid-column: 2 / -1; color: var(--champagne); padding-top: 8px; }
+.done { padding: 3.2vw 0 2vw 9%; font: 300 clamp(22px, 2.2vw, 34px)/1.1 var(--sans); letter-spacing: -0.02em; }
+
+.foot { display: flex; justify-content: space-between; padding: 0 var(--g) 18px; color: var(--mist); }
+
+/* Motion */
+.rise { transition: opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1); }
+.rise.pre { opacity: 0; transform: translateY(24px); }
+
+@media (max-width: 760px) {
+  .title { margin-left: 0; font-size: 20.5vw; margin-top: 12vw; }
+  .intro { margin: 10vw 0 0 auto; width: 150px; }
+  .offer, .figures { grid-template-columns: 1fr; }
+  .offer { margin-top: 70vw; } .offer > span { margin-bottom: 10px; }
+  .figures { grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16vw; } .figures > span { display: none; } .fig b { font-size: 52px; }
+  .row { grid-template-columns: 34px 1fr; min-height: 0; gap: 6px; }
+  .row h2 { grid-column: 2; } .row .d { grid-column: 2; grid-row: auto; max-width: none; }
+  .dots { display: none; }
+      .close { padding-top: 22vw; min-height: 0; }
+  .bgimg { inset: 0; background-position: 65% top; }
+  .bgimg::after { background: linear-gradient(180deg, rgba(10,19,36,.35) 0%, rgba(10,19,36,.55) 40%, var(--ink) 72%); }
+  .close .head { margin-left: 0; --h: clamp(56px, 17vw, 80px); }
+  .close .note { margin: 20px 0 0; }
+  .close .form { margin-top: 16vw; }
+  .form { grid-template-columns: 1fr; gap: 16px; padding-top: 8vw; } .form > span:first-child { display: none; }
+  .form button.key { justify-self: start; }
+  .status { grid-column: 1; }
+  .done { padding-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .rise, .rise.pre { opacity: 1; transform: none; transition: none; } .zone__bg { transform: none !important; } }
+</style>
+</head>
+<body>
+
+<div class="zone" id="top">
+  <div class="zone__bg" id="bg" role="img" aria-label="The Barbican tower at dusk"></div>
+  <header class="top tiny">
+    <a href="#top">Avenue 67</a>
+    <nav><a href="#contact">Contact us</a><a href="#services">Services</a><a href="#contact">Pricing</a></nav>
+  </header>
+  <div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+  <h1 class="title">Avenue 67</h1>
+  <div class="intro tiny">
+    <p>A property sourcing agency for buyers of fine homes in London, Oxford and Cambridge.</p>
+    <a class="cta" href="#contact"><span>Click to request<br>a consultation</span><span class="key" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="15" r="4"/><path d="M11 12l8-8M16 7l3 3"/></svg></span></a>
+  </div>
+
+  <div class="offer rise" id="services"><span class="tiny">Avenue 67 handles</span>
+    <p class="big">the search, viewings, strategy reports, the maximum price, negotiation, conveyancing and completion</p>
+  </div>
+
+
+  <div class="rows">
+    <div class="row rise"><span class="n tiny">/01</span><h2>sourcing</h2><div class="d tiny"><p>On and off-market homes, screened to your brief</p></div></div>
+    <div class="row rise"><span class="n tiny">/02</span><h2>strategy report</h2><div class="d tiny"><p>Scheme, price, risk</p></div></div>
+    <div class="row rise"><span class="n tiny">/03</span><h2>acquisition</h2><div class="d tiny"><p>Offer to completion</p></div></div>
+  </div>
+</div>
+
+<section class="close" id="contact">
+  <div class="bgimg" role="img" aria-label="Curved balconies glowing at night"></div>
+  <div class="head rise"><h2><span>Pricing</span><span class="r">on</span><span>request</span></h2>
+  <p class="note tiny">We find the right house, tell you what it is worth and what to do with it, then buy it for you. Fees are set per house; leave your details and we will call.</p></div>
+
+  <form class="form" id="lead-form" novalidate>
+    <input type="text" name="company" id="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+    <span></span>
+    <div class="f" id="f-email"><label class="tiny" for="email">Email</label><input id="email" type="email" autocomplete="email" required><span class="msg tiny" id="email-msg"></span></div>
+    <div class="f" id="f-phone"><label class="tiny" for="phone">Phone</label><input id="phone" type="tel" autocomplete="tel" required><span class="msg tiny" id="phone-msg"></span></div>
+    <button class="key" type="submit" id="submit" aria-label="Request a consultation"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    <p class="status tiny" id="status" role="alert" hidden></p>
+  </form>
+  <p class="done" id="done" hidden tabindex="-1">Thank you. We will call within one working day.</p>
+</section>
+
+<footer class="foot tiny"><span id="yr">2026</span><span>London · Oxford · Cambridge</span></footer>
+
+<script>
+(function () {
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  var bg = document.getElementById('bg');
+  if (!reduce) {
+    var tick = false;
+    addEventListener('scroll', function () {
+      if (tick) return; tick = true;
+      requestAnimationFrame(function () { bg.style.transform = 'translateY(' + (scrollY * 0.12) + 'px)'; tick = false; });
+    }, { passive: true });
+  }
+  if (!reduce && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.remove('pre'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('.rise').forEach(function (n) { if (n.getBoundingClientRect().top > innerHeight) { n.classList.add('pre'); io.observe(n); } });
+  }
+
+  // Google Apps Script web app URL (Deploy > Web app). Leads are appended to your Google Sheet.
+  var SHEET_URL = '';
+  var form = document.getElementById('lead-form'), btn = document.getElementById('submit'), status = document.getElementById('status');
+  function bad(id, msg) { var f = document.getElementById('f-' + id); if (msg) f.setAttribute('data-bad', ''); else f.removeAttribute('data-bad'); document.getElementById(id + '-msg').textContent = msg || ''; }
+  function phoneOk(v) { var d = v.replace(/[\s().-]/g, ''); if (/^\+44\d{9,10}$/.test(d)) return d; if (/^0\d{9,10}$/.test(d)) return '+44' + d.slice(1); return null; }
+  ['email', 'phone'].forEach(function (id) { document.getElementById(id).addEventListener('input', function () { bad(id, ''); status.hidden = true; }); });
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var email = document.getElementById('email').value.trim(), raw = document.getElementById('phone').value.trim(), phone = phoneOk(raw), ok = true;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { bad('email', email ? 'Check the address' : 'Required'); ok = false; }
+    if (!phone) { bad('phone', raw ? 'Use a UK number' : 'Required'); ok = false; }
+    if (!ok) return;
+    if (document.getElementById('company').value) return;
+    btn.disabled = true;
+    if (!SHEET_URL) { btn.disabled = false; status.hidden = false; status.textContent = 'Not sent. The enquiry form is not connected yet.'; return; }
+    var body = new URLSearchParams({ email: email, phone: phone, page: location.href, submittedAt: new Date().toISOString() });
+    fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', body: body }).then(function () {
+      form.hidden = true; var d = document.getElementById('done'); d.hidden = false; d.focus();
+    }).catch(function () {
+      btn.disabled = false; status.hidden = false; status.textContent = 'Not sent. Check your connection and try again.';
+    });
+  });
+})();
+</script>
+</body>
+</html>
