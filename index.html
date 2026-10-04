@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Avenue 67</title>
+<title>Avenue 62</title>
 <meta name="description" content="Property sourcing for buyers of fine homes in London, Oxford and Cambridge.">
-<meta property="og:title" content="Avenue 67">
+<meta property="og:title" content="Avenue 62">
 <meta property="og:description" content="Property sourcing for buyers of fine homes in London, Oxford and Cambridge.">
 <meta property="og:image" content="img/barbican.jpg">
 <meta name="theme-color" content="#0a1324">
@@ -89,7 +89,11 @@ a:hover .key, button.key:hover { background: var(--champagne); transform: transl
 .form input:focus { outline: none; border-bottom-color: var(--ivory); }
 .form .f[data-bad] input { border-bottom-color: var(--champagne); }
 .form .msg { min-height: 15px; color: var(--champagne); }
-.form button.key { border: 0; cursor: pointer; margin-bottom: 20px; }
+.form button.key { border: 0; cursor: pointer; margin-bottom: 20px; grid-column: 4; grid-row: 2; }
+.form { row-gap: 22px; }
+.form > span:first-of-type { grid-row: 1 / 3; }
+#f-name, #f-email { grid-column: 2; } #f-org, #f-phone { grid-column: 3; }
+.form label .opt { text-transform: none; letter-spacing: 0; opacity: .7; }
 .form button.key[disabled] { opacity: .5; cursor: progress; }
 .status { grid-column: 2 / -1; color: var(--champagne); padding-top: 8px; }
 .done { padding: 3.2vw 0 2vw 9%; font: 300 clamp(22px, 2.2vw, 34px)/1.1 var(--sans); letter-spacing: -0.02em; }
@@ -117,7 +121,8 @@ a:hover .key, button.key:hover { background: var(--champagne); transform: transl
   .close .note { margin: 20px 0 0; }
   .close .form { margin-top: 16vw; }
   .form { grid-template-columns: 1fr; gap: 16px; padding-top: 8vw; padding-bottom: 20vw; } .form > span:first-child { display: none; }
-  .form button.key { justify-self: start; }
+  .form button.key { justify-self: start; grid-column: auto; grid-row: auto; }
+  #f-name, #f-email, #f-org, #f-phone { grid-column: auto; }
   .status { grid-column: 1; }
   .done { padding-left: 0; }
 }
@@ -129,18 +134,18 @@ a:hover .key, button.key:hover { background: var(--champagne); transform: transl
 <div class="zone" id="top">
   <div class="zone__bg" id="bg" role="img" aria-label="The Barbican tower at dusk"></div>
   <header class="top tiny">
-    <a href="#top">Avenue 67</a>
+    <a href="#top">Avenue 62</a>
     <nav><a href="#contact">Contact us</a><a href="#services">Services</a><a href="#contact">Pricing</a></nav>
   </header>
   <div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 
-  <h1 class="title">Avenue 67</h1>
+  <h1 class="title">Avenue 62</h1>
   <div class="intro tiny">
     <p>A property sourcing agency for buyers of fine homes in London, Oxford and Cambridge.</p>
     <a class="cta" href="#contact"><span>Click to request<br>a consultation</span><span class="key" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="15" r="4"/><path d="M11 12l8-8M16 7l3 3"/></svg></span></a>
   </div>
 
-  <div class="offer rise" id="services"><span class="tiny">Avenue 67 handles</span>
+  <div class="offer rise" id="services"><span class="tiny">Avenue 62 handles</span>
     <p class="big">the search, viewings, strategy reports, the maximum price, introductions and guidance while you buy</p>
   </div>
 
@@ -158,8 +163,10 @@ a:hover .key, button.key:hover { background: var(--champagne); transform: transl
   <p class="note tiny">We find the right house and tell you what it is worth and what to do with it. Fees are set per house; leave your details and we will call.</p></div>
 
   <form class="form" id="lead-form" novalidate>
-    <input type="text" name="company" id="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+    <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
     <span></span>
+    <div class="f" id="f-name"><label class="tiny" for="name">Name</label><input id="name" type="text" autocomplete="name" maxlength="100" required><span class="msg tiny" id="name-msg"></span></div>
+    <div class="f" id="f-org"><label class="tiny" for="org">Company <span class="opt">(optional)</span></label><input id="org" type="text" autocomplete="organization" maxlength="120"><span class="msg tiny" id="org-msg"></span></div>
     <div class="f" id="f-email"><label class="tiny" for="email">Email</label><input id="email" type="email" autocomplete="email" required><span class="msg tiny" id="email-msg"></span></div>
     <div class="f" id="f-phone"><label class="tiny" for="phone">Phone</label><input id="phone" type="tel" autocomplete="tel" required><span class="msg tiny" id="phone-msg"></span></div>
     <button class="key" type="submit" id="submit" aria-label="Request a consultation"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
@@ -193,17 +200,19 @@ a:hover .key, button.key:hover { background: var(--champagne); transform: transl
   var form = document.getElementById('lead-form'), btn = document.getElementById('submit'), status = document.getElementById('status');
   function bad(id, msg) { var f = document.getElementById('f-' + id); if (msg) f.setAttribute('data-bad', ''); else f.removeAttribute('data-bad'); document.getElementById(id + '-msg').textContent = msg || ''; }
   function phoneOk(v) { var d = v.replace(/[\s().-]/g, ''); if (/^\+44\d{9,10}$/.test(d)) return d; if (/^0\d{9,10}$/.test(d)) return '+44' + d.slice(1); return null; }
-  ['email', 'phone'].forEach(function (id) { document.getElementById(id).addEventListener('input', function () { bad(id, ''); status.hidden = true; }); });
+  ['name', 'email', 'phone'].forEach(function (id) { document.getElementById(id).addEventListener('input', function () { bad(id, ''); status.hidden = true; }); });
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
+    var name = document.getElementById('name').value.trim(), org = document.getElementById('org').value.trim();
     var email = document.getElementById('email').value.trim(), raw = document.getElementById('phone').value.trim(), phone = phoneOk(raw), ok = true;
+    if (name.length < 2) { bad('name', 'Required'); ok = false; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { bad('email', email ? 'Check the address' : 'Required'); ok = false; }
     if (!phone) { bad('phone', raw ? 'Use a UK number' : 'Required'); ok = false; }
     if (!ok) return;
-    if (document.getElementById('company').value) return;
+    if (document.getElementById('website').value) return;
     btn.disabled = true;
     if (!SHEET_URL) { btn.disabled = false; status.hidden = false; status.textContent = 'Not sent. The enquiry form is not connected yet.'; return; }
-    var body = new URLSearchParams({ email: email, phone: phone, page: location.href, submittedAt: new Date().toISOString() });
+    var body = new URLSearchParams({ name: name, company: org, email: email, phone: phone, page: location.href, submittedAt: new Date().toISOString() });
     fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', body: body }).then(function () {
       form.hidden = true; var d = document.getElementById('done'); d.hidden = false; d.focus();
     }).catch(function () {
