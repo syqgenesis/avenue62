@@ -59,12 +59,12 @@ a:hover .key, button.key:hover { background: var(--champagne); transform: transl
 .fig p { margin-top: 10px; color: var(--mist); }
 
 .rows { margin-top: 4vw; }
-.row { display: grid; grid-template-columns: 9% 1fr 26%; min-height: 9.5vw; padding: 12px 0 18px; border-top: 1px solid var(--line); }
+.row { display: grid; grid-template-columns: 9% 1fr; grid-template-rows: 1fr auto; min-height: 9.5vw; padding: 12px 0 20px; border-top: 1px solid var(--line); }
 .row:last-child { border-bottom: 1px solid var(--line); }
-.row .n { color: var(--mist); }
-.row h2 { grid-column: 2; align-self: end; margin: 0; font: 300 clamp(26px, 2.7vw, 42px)/1 var(--sans); letter-spacing: -0.02em; color: rgba(242,239,232,.8); transition: color .4s; }
+.row .n { grid-row: 1 / 3; color: var(--mist); }
+.row h2 { grid-column: 2; grid-row: 1; align-self: end; margin: 0; font: 300 clamp(26px, 2.7vw, 42px)/1 var(--sans); letter-spacing: -0.02em; color: rgba(242,239,232,.8); transition: color .4s; }
 .row:hover h2 { color: var(--ivory); }
-.row .d { grid-column: 3; grid-row: 1; display: grid; gap: 8px; align-content: start; color: rgba(242,239,232,.9); max-width: 240px; font-size: 15px; line-height: 1.45; }
+.row .d { grid-column: 2; grid-row: 2; display: grid; gap: 8px; margin-top: 10px; color: rgba(242,239,232,.9); max-width: 380px; font-size: 15px; line-height: 1.45; }
 
 /* Close */
 .close { position: relative; isolation: isolate; min-height: 100svh; padding: 18vh var(--g) 0; display: flex; flex-direction: column; overflow: hidden; }
@@ -82,7 +82,7 @@ a:hover .key, button.key:hover { background: var(--champagne); transform: transl
 .trio > div { position: relative; aspect-ratio: 3 / 4; background: center / cover no-repeat; }
 
 
-.form { display: grid; grid-template-columns: 9% 1fr 1fr auto; gap: 0 3vw; align-items: end; padding: 3.2vw 0 2vw; }
+.form { display: grid; grid-template-columns: 9% 1fr 1fr auto; gap: 0 3vw; align-items: end; padding: 3.2vw 0 9vw; }
 .form .f { display: grid; gap: 6px; }
 .form label { color: var(--mist); text-transform: uppercase; letter-spacing: .08em; }
 .form input { width: 100%; background: transparent; border: 0; border-bottom: 1px solid rgba(242,239,232,.28); border-radius: 0; color: var(--ivory); font: 300 clamp(18px, 1.6vw, 24px)/1.2 var(--sans); padding: 6px 0 10px; }
@@ -108,7 +108,7 @@ a:hover .key, button.key:hover { background: var(--champagne); transform: transl
   .offer { margin-top: 70vw; } .offer > span { margin-bottom: 10px; }
   .figures { grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16vw; } .figures > span { display: none; } .fig b { font-size: 52px; }
   .row { grid-template-columns: 34px 1fr; min-height: 0; gap: 6px; }
-  .row h2 { grid-column: 2; } .row .d { grid-column: 2; grid-row: auto; max-width: none; }
+  .row .n { grid-row: 1 / 3; } .row h2 { grid-column: 2; } .row .d { grid-column: 2; margin-top: 4px; max-width: none; }
   .dots { display: none; }
       .close { padding-top: 22vw; min-height: 0; }
   .bgimg { inset: 0; background-position: 65% top; }
@@ -116,7 +116,7 @@ a:hover .key, button.key:hover { background: var(--champagne); transform: transl
   .close .head { margin-left: 0; --h: clamp(56px, 17vw, 80px); }
   .close .note { margin: 20px 0 0; }
   .close .form { margin-top: 16vw; }
-  .form { grid-template-columns: 1fr; gap: 16px; padding-top: 8vw; } .form > span:first-child { display: none; }
+  .form { grid-template-columns: 1fr; gap: 16px; padding-top: 8vw; padding-bottom: 20vw; } .form > span:first-child { display: none; }
   .form button.key { justify-self: start; }
   .status { grid-column: 1; }
   .done { padding-left: 0; }
@@ -141,21 +141,21 @@ a:hover .key, button.key:hover { background: var(--champagne); transform: transl
   </div>
 
   <div class="offer rise" id="services"><span class="tiny">Avenue 67 handles</span>
-    <p class="big">the search, viewings, strategy reports, the maximum price, negotiation, conveyancing and completion</p>
+    <p class="big">the search, viewings, strategy reports, the maximum price, introductions and guidance while you buy</p>
   </div>
 
 
   <div class="rows">
     <div class="row rise"><span class="n tiny">/01</span><h2>sourcing</h2><div class="d tiny"><p>On and off-market homes, screened to your brief</p></div></div>
     <div class="row rise"><span class="n tiny">/02</span><h2>strategy report</h2><div class="d tiny"><p>Scheme, price, risk</p></div></div>
-    <div class="row rise"><span class="n tiny">/03</span><h2>acquisition</h2><div class="d tiny"><p>Offer to completion</p></div></div>
+    <div class="row rise"><span class="n tiny">/03</span><h2>guidance</h2><div class="d tiny"><p>Introductions to the people you need, and continued guidance if you follow the report</p></div></div>
   </div>
 </div>
 
 <section class="close" id="contact">
   <div class="bgimg" role="img" aria-label="Curved balconies glowing at night"></div>
   <div class="head rise"><h2><span>Pricing</span><span class="r">on</span><span>request</span></h2>
-  <p class="note tiny">We find the right house, tell you what it is worth and what to do with it, then buy it for you. Fees are set per house; leave your details and we will call.</p></div>
+  <p class="note tiny">We find the right house and tell you what it is worth and what to do with it. Fees are set per house; leave your details and we will call.</p></div>
 
   <form class="form" id="lead-form" novalidate>
     <input type="text" name="company" id="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
