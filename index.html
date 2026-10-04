@@ -25,7 +25,7 @@
 }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 body { margin: 0; background: var(--ink); color: var(--ivory); font: 400 11px/1.35 var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 a { color: inherit; text-decoration: none; }
 p { margin: 0; }
@@ -43,8 +43,8 @@ p { margin: 0; }
 .dots i { display: block; width: 3px; height: 3px; border-radius: 50%; background: var(--mist); }
 .dots i:first-child { background: var(--ivory); }
 
-.title { margin: 2vw 0 0 9%; font: 300 clamp(64px, 14.6vw, 230px)/.86 var(--sans); letter-spacing: -0.055em; white-space: nowrap; }
-.intro { display: grid; gap: 14px; width: 128px; margin: 4vw 0 0 47%; }
+.title { margin: 3vw 0 0 2%; font: 300 clamp(56px, 10.4vw, 168px)/.86 var(--sans); letter-spacing: -0.055em; white-space: nowrap; }
+.intro { display: grid; gap: 14px; width: 150px; margin: 5vw 6% 0 auto; }
 .intro .cta { display: grid; gap: 10px; justify-items: start; }
 .key { width: 46px; height: 46px; border-radius: 50%; background: var(--ivory); color: var(--ink); display: grid; place-items: center; transition: background-color .4s, transform .5s cubic-bezier(.2,.7,.2,1); }
 a:hover .key, button.key:hover { background: var(--champagne); transform: translateY(2px); }
@@ -70,7 +70,7 @@ a:hover .key, button.key:hover { background: var(--champagne); transform: transl
 .close { position: relative; isolation: isolate; min-height: 100svh; padding: 18vh var(--g) 0; display: flex; flex-direction: column; overflow: hidden; }
 .bgimg { position: absolute; inset: 0 0 0 28%; z-index: -1; background: url("img/balconies.jpg") 70% 40% / cover no-repeat; }
 .bgimg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, var(--ink) 0%, rgba(10,19,36,0) 35%), linear-gradient(180deg, var(--ink) 0%, var(--ink) 6%, rgba(10,19,36,.82) 18%, rgba(10,19,36,.45) 32%, rgba(10,19,36,.12) 46%, rgba(10,19,36,0) 56%), linear-gradient(90deg, var(--ink) 0%, rgba(10,19,36,.85) 16%, rgba(10,19,36,.35) 32%, rgba(10,19,36,0) 50%); }
-.close .head { margin-left: 9%; --h: clamp(64px, 11vw, 200px); }
+.close .head { margin-left: 9%; --h: clamp(56px, 8.4vw, 150px); }
 .close h2 { margin: 0; font: 300 var(--h)/.88 var(--sans); letter-spacing: -0.045em; }
 .close h2 span { display: block; }
 .close h2 .r { padding-left: 1.4em; }
