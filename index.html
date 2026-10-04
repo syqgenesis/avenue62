@@ -43,7 +43,7 @@ p { margin: 0; }
 .dots i { display: block; width: 3px; height: 3px; border-radius: 50%; background: var(--mist); }
 .dots i:first-child { background: var(--ivory); }
 
-.title { margin: 3vw 0 0 2%; font: 300 clamp(56px, 10.4vw, 168px)/.86 var(--sans); letter-spacing: -0.055em; white-space: nowrap; }
+.title { margin: 3vw 0 0 2%; font: 300 clamp(56px, 9.2vw, 150px)/.86 var(--sans); letter-spacing: -0.055em; white-space: nowrap; }
 .intro { display: grid; gap: 14px; width: 150px; margin: 5vw 6% 0 auto; }
 .intro .cta { display: grid; gap: 10px; justify-items: start; }
 .key { width: 46px; height: 46px; border-radius: 50%; background: var(--ivory); color: var(--ink); display: grid; place-items: center; transition: background-color .4s, transform .5s cubic-bezier(.2,.7,.2,1); }
@@ -103,6 +103,7 @@ a:hover .key, button.key:hover { background: var(--champagne); transform: transl
 @media (max-width: 760px) {
   .title { margin-left: 0; font-size: 20.5vw; margin-top: 12vw; }
   .intro { margin: 10vw 0 0 auto; width: 150px; }
+  .zone__bg { background-position: 62% top; }
   .offer, .figures { grid-template-columns: 1fr; }
   .offer { margin-top: 70vw; } .offer > span { margin-bottom: 10px; }
   .figures { grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16vw; } .figures > span { display: none; } .fig b { font-size: 52px; }
@@ -111,7 +112,7 @@ a:hover .key, button.key:hover { background: var(--champagne); transform: transl
   .dots { display: none; }
       .close { padding-top: 22vw; min-height: 0; }
   .bgimg { inset: 0; background-position: 65% top; }
-  .bgimg::after { background: linear-gradient(180deg, rgba(10,19,36,.35) 0%, rgba(10,19,36,.55) 40%, var(--ink) 72%); }
+  .bgimg::after { background: linear-gradient(180deg, rgba(10,19,36,.55) 0%, rgba(10,19,36,.55) 40%, var(--ink) 72%); }
   .close .head { margin-left: 0; --h: clamp(56px, 17vw, 80px); }
   .close .note { margin: 20px 0 0; }
   .close .form { margin-top: 16vw; }
