@@ -189,7 +189,7 @@ a:hover .key, button.key:hover { background: var(--champagne); transform: transl
   }
 
   // Google Apps Script web app URL (Deploy > Web app). Leads are appended to your Google Sheet.
-  var SHEET_URL = '';
+  var SHEET_URL = 'https://script.google.com/macros/s/AKfycbxijLel4xodZyEEZVaHk8jrtL6VjPjlwvZgoCNsH1gkNTQ0lAQToSIomXHDqO2I3WShDg/exec';
   var form = document.getElementById('lead-form'), btn = document.getElementById('submit'), status = document.getElementById('status');
   function bad(id, msg) { var f = document.getElementById('f-' + id); if (msg) f.setAttribute('data-bad', ''); else f.removeAttribute('data-bad'); document.getElementById(id + '-msg').textContent = msg || ''; }
   function phoneOk(v) { var d = v.replace(/[\s().-]/g, ''); if (/^\+44\d{9,10}$/.test(d)) return d; if (/^0\d{9,10}$/.test(d)) return '+44' + d.slice(1); return null; }
